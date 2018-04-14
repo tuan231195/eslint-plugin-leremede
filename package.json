@@ -1,0 +1,40 @@
+{
+  "name": "eslint-plugin-leremede",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Tuan Nguyen <vdtn359@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "nyc --reporter=text mocha tests/** rules/**",
+    "test:single": "nyc --reporter=text mocha tests/rules/${npm_config_test} rules/${npm_config_test}",
+    "coverage": "nyc --reporter=html --reporter=text-lcov mocha tests/** rules/** > coverage.lcov",
+    "precommit": "yarn validate",
+    "validate": "yarn test",
+    "cz": "git-cz"
+  },
+  "devDependencies": {
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.1.0",
+    "eslint": "^4.19.0",
+    "eslint-config-leremede": "1.0.0",
+    "mocha": "5.1.0",
+    "nyc": "11.6.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=3"
+  },
+  "nyc": {
+    "sourceMap": false
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "husky": "0.14.3"
+  }
+}
